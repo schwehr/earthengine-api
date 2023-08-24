@@ -123,7 +123,7 @@ class DataTest(unittest.TestCase):
       # self.assertEqual(
       #     asset['tilestore_location'],
       #     {'sources': []},
-      )
+      # )
 
   def testSetAssetProperties(self):
     mock_http = mock.MagicMock(httplib2.Http)
