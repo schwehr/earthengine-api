@@ -343,8 +343,8 @@ def _pretty_print_json(json_obj):
 
 class Dispatcher:
   """Dispatches to a set of commands implemented as command classes."""
-  COMMANDS: list[Any]
-  command_dict: dict[str, Any]
+  COMMANDS: List[Any]
+  command_dict: Dict[str, Any]
   dest: str
   name: str
 

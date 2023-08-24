@@ -539,7 +539,7 @@ def listImages(params: Dict[str, Any]) -> Dict[str, Optional[List[int]]]:
   return images
 
 
-def listAssets(params: dict[str, Any]) -> dict[str, List[Any]]:
+def listAssets(params: Dict[str, Any]) -> dict[str, List[Any]]:
   """Returns the assets in a folder.
 
   Args:
@@ -710,7 +710,7 @@ def getFeatureViewTilesKey(params: Dict[str, Any]) -> Dict[str, Any]:
   }
 
 
-def listFeatures(params: dict[str, Any]) -> Any:
+def listFeatures(params: Dict[str, Any]) -> Any:
   """List features for a given table or FeatureView asset.
 
   Args:
