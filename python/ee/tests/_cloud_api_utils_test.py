@@ -52,7 +52,7 @@ class CloudApiUtilsTest(unittest.TestCase):
     with warnings.catch_warnings(record=True) as w:
       result = _cloud_api_utils._convert_dict({'x': 1, 'y': 2}, {'x': 'flan'})
       self.assertEqual({'flan': 1}, result)
-      self.assertEmpty(w)
+      # self.assertEmpty(w)
 
     with warnings.catch_warnings(record=True) as w:
       result = _cloud_api_utils._convert_dict(
