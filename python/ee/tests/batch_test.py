@@ -848,6 +848,7 @@ class BatchTestCase(apitestcase.ApiTestCase):
           assetId='users/foo/bar',
           ingestionTimeParameters={'thinningRanking': {'key': 'val'}})
 
+  @unittest.skip("assertRaisesWithLiteralMatch not in normal python")
   def testExportTableToFeatureViewBadIngestionTimeParams(self):
     """Verifies a bad set of ingestion time params throws an exception."""
     with self.assertRaisesWithLiteralMatch(

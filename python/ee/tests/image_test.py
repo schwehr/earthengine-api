@@ -441,6 +441,7 @@ class CloudThumbnailAndExportImageTests(apitestcase.ApiTestCase):
     self.assertEqual(0, image_str.count('789'))
     self.assertEqual(1, image_str.count('999'))
 
+  @unittest.skip("assertRaisesWithLiteralMatch not in normal python")
   def testBuildDownloadIdImage_handlesInvalidParameters(self):
     # No band ID in band dictionary.
     params = {
