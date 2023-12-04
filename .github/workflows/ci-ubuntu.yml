@@ -36,8 +36,6 @@ jobs:
           key: ${{ runner.os }}-pip-${{ hashFiles('**/setup.py') }}
       - name: Install dependencies
         run: |
-          # pip install ./python
-          # pip install -e ./python[tests]
           pip install ./python[tests]
       - name: Test
         run: |
