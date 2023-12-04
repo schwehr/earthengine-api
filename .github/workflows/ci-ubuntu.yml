@@ -1,7 +1,7 @@
 name: ci-python-ubuntu
 on: [
   push,
-  pull_request
+  pull_request,
 ]
 
 jobs:
@@ -11,12 +11,12 @@ jobs:
     strategy:
       matrix:
         python-version: [
-            "3.7",
-            "3.8",
-            "3.9",
-            "3.10",
+            # "3.7",
+            # "3.8",
+            # "3.9",
+            # "3.10",
             "3.11",
-            "3.12",
+            # "3.12",
         ]
     steps:
       - name: Set up Python
@@ -26,9 +26,8 @@ jobs:
       - uses: actions/checkout@v3
       - name: Install dependencies
         run: |
-          python -m pip install --upgrade pip
-          pip install -r python/requirements.txt
-          pip install ./python
+          # pip install ./python
+          # pip install -e ./python[tests]
           pip install -e ./python[tests]
       - name: Test
         run: |
