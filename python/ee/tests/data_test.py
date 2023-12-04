@@ -283,7 +283,6 @@ class DataTest(unittest.TestCase):
       self.assertEqual('', actual_result['token'])
       self.assertIsInstance(actual_result['tile_fetcher'], ee.data.TileFetcher)
 
-  @unittest.skip("Does not work on GitHub")
   def testGetMapId_withWorkloadTag(self):
     with ee.data.workloadTagContext('mapid-tag'):
       cloud_api_resource = mock.MagicMock()
