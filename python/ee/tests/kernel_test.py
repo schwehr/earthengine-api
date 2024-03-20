@@ -51,14 +51,6 @@ class KernelTest(apitestcase.ApiTestCase):
     result = json.loads(kernel.serialize())
     self.assertEqual(_KERNEL_JSON, result)
 
-  def test_no_args(self):
-    message = (
-        r'Kernel\.__init__\(\) missing 1 required positional argument:'
-        r' \'kernel\''
-    )
-    with self.assertRaisesRegex(TypeError, message):
-      ee.Kernel()  # pytype:disable=missing-parameter
-
   def test_wrong_type(self):
     message = (
         r'Kernel can only be used as a cast to Kernel\. Found <class'

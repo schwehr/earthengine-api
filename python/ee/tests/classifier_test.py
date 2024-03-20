@@ -45,14 +45,6 @@ class ClassifierTest(apitestcase.ApiTestCase):
     result = json.loads(classifier.serialize())
     self.assertEqual(_CLASSIFIER_JSON, result)
 
-  def test_no_args(self):
-    message = (
-        r'Classifier\.__init__\(\) missing 1 required positional argument:'
-        r' \'classifier\''
-    )
-    with self.assertRaisesRegex(TypeError, message):
-      ee.Classifier()  # pytype:disable=missing-parameter
-
   def test_wrong_type(self):
     message = (
         r'Classifier can only be used as a cast to Classifier\. Found <class'

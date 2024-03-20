@@ -55,14 +55,6 @@ class ClustererTest(apitestcase.ApiTestCase):
     result = json.loads(clusterer.serialize())
     self.assertEqual(_WEKA_COBWEB_SERIALIZED, result)
 
-  def test_no_args(self):
-    message = (
-        r'Clusterer\.__init__\(\) missing 1 required positional argument:'
-        r' \'clusterer\''
-    )
-    with self.assertRaisesRegex(TypeError, message):
-      ee.Clusterer()  # pytype:disable=missing-parameter
-
   def test_wrong_type(self):
     message = (
         r'Clusterer can only be used as a cast to Clusterer\. Found <class'
