@@ -103,7 +103,6 @@ class DateRangeTest(apitestcase.ApiTestCase):
     end = ee.Date('2017-06-24T07:00:00')
     daterange = ee.DateRange(start, end)
     result = json.loads(daterange.serialize())
-    print(result)
     expect = {
         'result': '0',
         'values': {

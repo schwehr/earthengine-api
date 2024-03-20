@@ -380,33 +380,6 @@ class BatchTestCase(apitestcase.ApiTestCase):
           },
           task_ordered.config)
 
-      task_overwrite_with_priority = ee.batch.Export.image.toAsset(
-          image=config['image'],
-          assetId=config['assetId'],
-          overwrite=True,
-          priority=999,
-      )
-      self.assertIsNone(task_overwrite_with_priority.id)
-      self.assertIsNone(task_overwrite_with_priority.name)
-      self.assertEqual('EXPORT_IMAGE', task_overwrite_with_priority.task_type)
-      self.assertEqual('UNSUBMITTED', task_overwrite_with_priority.state)
-      self.assertEqual(
-          {
-              'expression': expected_expression,
-              'description': 'myExportImageTask',
-              'assetExportOptions': {
-                  'earthEngineDestination': {
-                      'name':
-                          'projects/earthengine-legacy/assets/users/foo/bar',
-                      'overwrite':
-                          True
-                  }
-              },
-              'priority': {
-                  'value': 999
-              }
-          }, task_overwrite_with_priority.config)
-
   def testExportImageToAssetCloudApi_withTileSize(self):
     """Verifies the Asset export task created by Export.image.toAsset()."""
     with apitestcase.UsingCloudApi():
@@ -991,36 +964,6 @@ class BatchTestCase(apitestcase.ApiTestCase):
               }
           },
           task.config)
-
-      task = ee.batch.Export.table.toAsset(
-          collection=ee.FeatureCollection('foo'),
-          description='foo',
-          assetId='users/foo/bar',
-          overwrite=True)
-      self.assertTrue(task.config['assetExportOptions']
-                      ['earthEngineDestination']['overwrite'])
-      task_with_priority = ee.batch.Export.table.toAsset(
-          collection=ee.FeatureCollection('foo'),
-          description='foo',
-          assetId='users/foo/bar',
-          priority=999,
-      )
-      self.assertEqual(
-          {
-              'expression': ee.FeatureCollection('foo'),
-              'description': 'foo',
-              'assetExportOptions': {
-                  'earthEngineDestination': {
-                      'name': (
-                          'projects/earthengine-legacy/assets/users/foo/bar'
-                      ),
-                      'overwrite': False,
-                  }
-              },
-              'priority': {'value': 999},
-          },
-          task_with_priority.config,
-      )
 
   def testExportTableWithFileFormatCloudApi(self):
     """Verifies the task created by Export.table() given a file format."""

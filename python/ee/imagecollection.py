@@ -9,6 +9,7 @@ from ee import apifunction
 from ee import collection
 from ee import computedobject
 from ee import data
+from ee import deprecation
 from ee import ee_exception
 from ee import ee_list
 from ee import ee_types
