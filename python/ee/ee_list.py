@@ -16,7 +16,7 @@ from ee import geometry
 from ee import reducer
 
 _EeAnyType = Union[Any, computedobject.ComputedObject]
-# TODO(user): - What will the backend accept for bools?
+# TODO: What will the backend accept for bools?
 _EeBoolType = Union[Any, computedobject.ComputedObject]
 _EeListType = Union[
     ListType[Any], Tuple[Any, Any], computedobject.ComputedObject
@@ -61,8 +61,8 @@ class List(computedobject.ComputedObject):
       raise ee_exception.EEException(
           'Invalid argument specified for ee.List(): %s' % arg)
 
-  # TODO(user): - Make a staticmethod for repeat.
-  # TODO(user): - Make a staticmethod for sequence.
+  # TODO: Make a staticmethod for repeat.
+  # TODO: Make a staticmethod for sequence.
 
   @classmethod
   def initialize(cls) -> None:
@@ -335,7 +335,7 @@ class List(computedobject.ComputedObject):
         self.name() + '.insert', self, index, element
     )
 
-  # TODO(user): - Improve the type of `function`
+  # TODO: Improve the type of `function`
   def iterate(self, function: Any, first: _EeAnyType) -> 'List':
     """Iterate an algorithm over a list.
 
@@ -395,7 +395,7 @@ class List(computedobject.ComputedObject):
 
     return apifunction.ApiFunction.call_(self.name() + '.length', self)
 
-  # TODO(user): - Improve the type of `baseAlgorithm`.
+  # TODO: Improve the type of `baseAlgorithm`.
   # pylint: disable=invalid-name
   def map(
       self, baseAlgorithm: _EeAnyType, dropNulls: _EeBoolType = False

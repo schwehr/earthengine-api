@@ -349,7 +349,7 @@ class ListTest(apitestcase.ApiTestCase):
     result = json.loads(expression.serialize())
     self.assertEqual(expect, result)
 
-  # TODO(user): - test_iterate
+  # TODO: test_iterate
 
   def test_join(self):
     expect = make_expression_graph({
@@ -394,7 +394,7 @@ class ListTest(apitestcase.ApiTestCase):
     result = json.loads(expression.serialize())
     self.assertEqual(expect, result)
 
-  # TODO(user): - test_map
+  # TODO: test_map
 
   def test_reduce(self):
     expect = make_expression_graph({
@@ -513,7 +513,7 @@ class ListTest(apitestcase.ApiTestCase):
     result = json.loads(expression.serialize())
     self.assertEqual(expect, result)
 
-  # TODO(user): - test_sequence
+  # TODO: test_sequence
 
   def test_set(self):
     expect = make_expression_graph({

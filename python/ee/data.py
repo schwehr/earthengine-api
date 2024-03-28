@@ -556,7 +556,9 @@ def getList(params: Dict[str, Any]) -> Any:
   return result
 
 
-def listImages(params: str|Dict[str, Any]) -> Dict[str, Optional[List[int]]]:
+def listImages(
+    params: Union[str, Dict[str, Any]],
+) -> Dict[str, Optional[List[int]]]:
   """Returns the images in an image collection or folder.
 
   Args:
@@ -593,7 +595,7 @@ def listImages(params: str|Dict[str, Any]) -> Dict[str, Optional[List[int]]]:
   return images
 
 
-def listAssets(params: str|Dict[str, Any]) -> Dict[str, List[Any]]:
+def listAssets(params: Union[str, Dict[str, Any]]) -> Dict[str, List[Any]]:
   """Returns the assets in a folder.
 
   Args:
