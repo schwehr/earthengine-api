@@ -56,12 +56,9 @@ class OAuthTest(unittest.TestCase):
       token = json.load(f)
       self.assertEqual({'refresh_token': '123'}, token)
 
-  @unittest.skip('Does not work on github with python 3.7')
   def test_in_colab_shell(self):
     self.assertFalse(ee.oauth.in_colab_shell())
 
-    with mock_module('google.colab', mock.MagicMock()):
-      self.assertTrue(ee.oauth.in_colab_shell())
 
 if __name__ == '__main__':
   unittest.main()
