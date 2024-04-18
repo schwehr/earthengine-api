@@ -13,16 +13,6 @@ import ee
 import unittest
 
 
-@contextlib.contextmanager
-def mock_module(name: str, value: mock.MagicMock) -> Iterator[None]:
-  original_module = sys.modules.get(name)
-  try:
-    sys.modules[name] = value
-    yield
-  finally:
-    sys.modules[name] = original_module
-
-
 class OAuthTest(unittest.TestCase):
 
   def setUp(self):
